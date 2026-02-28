@@ -1,5 +1,6 @@
 ## Entwicklungshinweis
-Ich habe dieses Projekt als Lernprojekt mit intensiver KI-Unterstützung entwickelt. 
+Ich habe dieses Projekt als Lernprojekt mit intensiver KI-Unterstützung, 
+insbesondere bei der Doxygen-Dokumentation entwickelt. 
 Der Prozess war: Ich schrieb Code, bekam Feedback, verstand die Konzepte besser, 
 überarbeitete, lernte dazu. So entstand in vielen Iterationen der finale Code – 
 den ich heute Zeile für Zeile verstehe und erklären kann.
