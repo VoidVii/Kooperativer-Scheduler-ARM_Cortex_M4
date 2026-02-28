@@ -1,0 +1,14 @@
+# IAR Project Files
+*.ewd
+*.ewp
+*.eww
+*.dep
+settings/
+Debug/
+Release/
+
+# Compiled files
+*.o
+*.out
+*.hex
+*.bin
