@@ -56,4 +56,8 @@ In diesem Lernprojekt habe ich ein komplettes Embedded-System auf Basis des Tiva
 
 - TI TM4C123GH6PM (ARM Cortex-M4)
 - On-board LEDs
+<<<<<<< HEAD
 - User switch
+=======
+- User switch
+>>>>>>> cdcf21be730e4dd16f83e28a5f799b1021495715
