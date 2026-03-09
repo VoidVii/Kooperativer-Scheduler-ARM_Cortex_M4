@@ -18,10 +18,9 @@ for(int i = 0; i < NUM_LEDS; i++) {
     LED_off(allLEDs[i]);  // Turn all off
 }
 */
-#include "TM4C123GH6PM.h"
-#include "system_TM4C123.h"
-#include "core_cm4.h"
-#include "Tm4c123gh6pm_Init.h"
+#include "TM4C123GH6PM.h"       // TI - MCU - CMSIS 
+#include "system_TM4C123.h"     // TI - Board - CMSIS 
+#include "core_cm4.h"           // CMSIS Header
 #include "SysTick.h"
 #include "GPIO.h"
 #include "Clock.h"
@@ -75,8 +74,8 @@ uint8_t read_Switch2(void){
 /* LED Objects - each with its own write function and state */
 LED_t red_LED = {
     .write = RED_LED_ON,        // Function to write to this specific LED
-    .currentState = 0U,          // Current state: 0 = OFF, 1 = ON
-    .activeHigh = 1U,             // 1 = HIGH turns LED on, 0 = LOW turns LED on
+    .currentState = 0U,         // Current state: 0 = OFF, 1 = ON
+    .activeHigh = 1U,           // 1 = HIGH turns LED on, 0 = LOW turns LED on
 };
 
 LED_t blue_LED = {
@@ -93,10 +92,10 @@ LED_t green_LED = {
 
 /* Switch Objects - each with its own read function and debounce state */
 Switch_t Switch1 ={
-    .read = read_Switch1,        // Function to read this specific switch
-    .lastDebounceTime = 0U,       // Timestamp of last state change (for debouncing)
-    .lastReading = 1U,            // Last raw reading from GPIO (1 = released with pull-up)
-    .switchState = 1U              // Current debounced state (1 = released)
+    .read = read_Switch1, // Function to read this specific switch
+    .lastDebounceTime = 0U, // Timestamp of last state change (for debouncing)
+    .lastReading = 1U, // Last raw reading from GPIO (1 = released with pull-up)
+    .switchState = 1U  // Current debounced state (1 = released)
 };
 
 Switch_t Switch2 ={
@@ -108,17 +107,10 @@ Switch_t Switch2 ={
 
 /**************************** Functions for Task-Handling  ********************/
 /**
- * @brief Task function for red LED - blinks every 300ms
- * Uses static variable to remember last blink time
+ * @brief Task function for red LED 
  */
 void redLED(void){
-    static uint32_t lastBlink = 0U;    // Timestamp of last blink (persists between calls)
-    uint32_t now = GetTickCounter();    // Current system time in ms
-    
-    if(now - lastBlink >= 300U){        // 300ms elapsed?
-        LED_toggle(&red_LED);            // Toggle the red LED
-        lastBlink = now;                  // Update last blink time
-    }
+        LED_toggle(&red_LED); // Toggle the red LED
 }
 
 /**
@@ -134,7 +126,7 @@ void Switch_1(void){
         LED_toggle(&blue_LED);            // Toggle blue LED on press
     }
     
-    lastState_1 = state;                   // Save current state for next detection
+    lastState_1 = state;               // Save current state for next detection
 }
 
 /**
@@ -150,7 +142,7 @@ void Switch_2(void){
         LED_toggle(&green_LED);           // Toggle green LED on press
     }
     
-    lastState_2 = state;                   // Save current state for next detection
+    lastState_2 = state;                // Save current state for next detection
 }
 
 /******************************* Build Tasks *********************************/
@@ -161,26 +153,26 @@ void Switch_2(void){
 Task_t Task[] = {
     /* Task for red LED blinking */
     {
-        .period = 250U,           // Check every 250ms (actual blink timing inside task)
-        .lastRun = 0U,             // Initialize last run time to 0
-        .sched = redLED            // Function to call
+        .period = 250U,  // Check every 250ms (actual blink timing inside task)
+        .lastRun = 0U,   // Initialize last run time to 0
+        .sched = redLED  // Function to call
     },
     /* Task for Switch 1 debouncing and detection */
     {
-        .period = 20U,             // Check every 20ms (good for debouncing)
+        .period = 20U,   // Check every 20ms (good for debouncing)
         .lastRun = 0U,
         .sched = Switch_1
     },
     /* Task for Switch 2 debouncing and detection */
     {
-        .period = 21U,             // Slightly different period to avoid phase lock
+        .period = 21U,   // Slightly different period to avoid phase lock
         .lastRun = 0U,
         .sched = Switch_2
     }
 };
 
 /* Calculate correct number of tasks: Total size / Element size */
-uint32_t numTasks = sizeof(Task) / sizeof(Task[0]);
+static const uint32_t numTasks = sizeof(Task) / sizeof(Task[0]);
 
 /**
  * @brief Main function - program entry point
@@ -188,8 +180,10 @@ uint32_t numTasks = sizeof(Task) / sizeof(Task[0]);
  */
 int main()
 {
+    /* Update the System Clock*/
     SystemCoreClockUpdate(); 
     
+    /* defensive initialization by disabling interrupts globally */
     __disable_irq();
     
     // Initialize system modules
@@ -210,6 +204,8 @@ int main()
     LED_off(&blue_LED);
     LED_off(&green_LED);
     
+    
+    /* enable interrupts globally after initialization  */
     __enable_irq();
    
     
