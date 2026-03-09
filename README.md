@@ -38,15 +38,19 @@ Der Fokus lag darauf, grundlegende Embedded-Konzepte wie Hardware-Abstraktion, S
 In diesem Lernprojekt habe ich ein komplettes Embedded-System auf Basis des Tiva TM4C123 (ARM Cortex-M4) entwickelt. Die Schwerpunkte lagen auf:
 
 - Hardware-Abstraktion:
-    Entwicklung eigener GPIO-Treiber mit Pointer-Arithmetik und Bit-Manipulation (AHB-basiert)
+  Entwicklung eigener GPIO-Treiber mit Pointer-Arithmetik und Bit-Manipulation (AHB-basiert)
+  
 - Objektorientierung in C:
-      Implementierung von LED- und Switch-Objekten mit Funktionspointern für flexible Hardware-Ansteuerung
+  Implementierung von LED- und Switch-Objekten mit Funktionspointern für flexible Hardware-Ansteuerung
+  
 - Kooperativer Scheduler:
-      Eigenentwicklung eines kooperativen Task-Schedulers für zeitgesteuerte periodische Abläufe (Foreground/Background-Architektur)
+  Eigenentwicklung eines kooperativen Task-Schedulers für zeitgesteuerte periodische Abläufe (Foreground/Background-Architektur)
+  
 - Dokumentation:
-      Code-Dokumentation mit Doxygen
+  Code-Dokumentation mit Doxygen
+  
 - Debugging & Problemlösung:
-      Umgang mit Hardware-Besonderheiten (Lock/Commit-Register, Bit-spezifische Adressierung, volatile)
+  Umgang mit Hardware-Besonderheiten (Lock/Commit-Register, Bit-spezifische Adressierung, volatile)
 
 # Hardware:
 
