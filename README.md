@@ -76,11 +76,14 @@ In diesem Lernprojekt habe ich ein komplettes Embedded-System auf Basis des Tiva
   
 - Debugging & Problemlösung:
   Umgang mit Hardware-Besonderheiten (Lock/Commit-Register, Bit-spezifische Adressierung, volatile)
+  
+# Build info
+- IAR Embedded Workbench (Arm)
+- Tiva C Series LaunchPad TM4C123GXL
 
 # Hardware:
 
 - TI TM4C123GH6PM (ARM Cortex-M4)
 - On-board LEDs
 - User switch
-
 
