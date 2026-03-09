@@ -1,5 +1,5 @@
 # Learning Project – Embedded Systems
-Bare-metal cooperative scheduler for ARM Cortex-M4 (TM4C123)
+Bare-metal cooperative scheduler for ARM Cortex-M4 (TM4C123) in C
 
 Kooperativer Scheduler für ARM Cortex-M4
 
