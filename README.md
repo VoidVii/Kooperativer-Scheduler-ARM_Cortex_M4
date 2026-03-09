@@ -3,6 +3,27 @@ Bare-metal cooperative scheduler for ARM Cortex-M4 (TM4C123) in C
 
 Kooperativer Scheduler für ARM Cortex-M4
 
+    Task_t Task[] = {
+        /* Task for red LED blinking */
+        {
+            .period = 250U,  // Check every 250ms (actual blink timing inside task)
+            .lastRun = 0U,   // Initialize last run time to 0
+            .sched = redLED  // Function to call
+        },
+        /* Task for Switch 1 debouncing and detection */
+        {
+            .period = 20U,   // Check every 20ms (good for debouncing)
+            .lastRun = 0U,
+            .sched = Switch_1
+        },
+        /* Task for Switch 2 debouncing and detection */
+        {
+            .period = 21U,   // Slightly different period to avoid phase lock
+            .lastRun = 0U,
+            .sched = Switch_2
+        }
+    };
+
 Dieses Projekt implementiert einen einfachen cooperative task scheduler auf Basis des SysTick Timers. Ziel des Projekts war es, ein besseres Verständnis für Embedded-System-Architektur, Hardware-Abstraktion und zeitgesteuerte Task-Ausführung ohne RTOS zu entwickeln.
 
 # Architekturdiagramm:
