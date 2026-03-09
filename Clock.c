@@ -12,36 +12,8 @@
  */
 
 #include "Clock.h"
-#include "tm4c123gh6pm.h"
 
-/**
- * @brief Initialize the system clock
- * 
- * For the current configuration, this function remains empty as we're
- * using the default 16 MHz clock from the reset state. The TM4C123GH6PM
- * defaults to using the main oscillator with the 16 MHz crystal.
- * 
- * If a different clock speed is needed (e.g., 80 MHz using PLL),
- * this function would contain the necessary configuration:
- * - Configure RCC/RCC2 registers for PLL operation
- * - Set crystal value and oscillator source
- * - Wait for PLL lock
- * - Switch to PLL as system clock
- * 
- * @note Currently configured for 16 MHz system clock
- * @note Required for 1ms SysTick timing (16000000/1000 = 16000 ticks)
- * 
- * @see SysTick_Init() depends on this clock configuration
- */
-void Clock_Init(void)
-{
-    /* 
-     * Empty implementation - using default 16 MHz clock
-     * 
-     * After reset, the TM4C123GH6PM runs from the main oscillator (MOSC)
-     * with the 16 MHz crystal. No configuration is needed for this mode.
-     */
-}
+
 
 /**
  * @brief Calculate SysTick reload value for 1ms period
@@ -79,7 +51,7 @@ uint32_t SysTick_Reload_Value(void)
      * The timer counts 16,000 cycles (from 15999 down to 0) at 16 MHz,
      * taking exactly 1ms (16,000 / 16,000,000 = 0.001 seconds).
      */
-    uint32_t SysTick_Reload = (System_Core_Clock / 1000U) - 1U;
+    uint32_t SysTick_Reload = (SystemCoreClock / 1000U) - 1U;
     
     return SysTick_Reload;
 }

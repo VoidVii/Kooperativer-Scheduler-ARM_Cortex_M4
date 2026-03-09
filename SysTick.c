@@ -12,7 +12,7 @@
  */
 
 #include "SysTick.h"
-#include "tm4c123gh6pm.h"
+#include "TM4C123GH6PM.h"
 #include "Clock.h"
 
 /**
@@ -42,10 +42,12 @@
 void SysTick_Init(void)
 {
     /* Disable SysTick during configuration to prevent unexpected interrupts */
-    NVIC_ST_CTRL_R = 0U;
+    //NVIC_ST_CTRL_R = 0U;
+    SysTick->CTRL = 0U;
     
     /* Clear current value (write any value to reset) */
-    NVIC_ST_CURRENT_R = 0U;
+    //NVIC_ST_CURRENT_R = 0U;
+    SysTick->VAL = 0U;
     
     /**
      * Set reload value for 1ms period
@@ -56,7 +58,8 @@ void SysTick_Init(void)
      * The SysTick_Reload_Value() function automatically calculates
      * the correct value based on the actual system clock.
      */
-    NVIC_ST_RELOAD_R = SysTick_Reload_Value();
+    //NVIC_ST_RELOAD_R = SysTick_Reload_Value();
+    SysTick->LOAD = SysTick_Reload_Value();
     
     /**
      * Configure SysTick control register:
@@ -64,7 +67,10 @@ void SysTick_Init(void)
      * Bit 1: Enable interrupt (INTEN)
      * Bit 2: Clock source - System clock (CLK_SRC)
      */
-    NVIC_ST_CTRL_R = 0x07;  /* Binary 111 = all three bits set */
+   // NVIC_ST_CTRL_R = 0x07;  /* Binary 111 = all three bits set */
+    SysTick->CTRL = SysTick_CTRL_CLKSOURCE_Msk | SysTick_CTRL_TICKINT_Msk |
+                    SysTick_CTRL_ENABLE_Msk;
+    
 }
 
 /**
@@ -108,7 +114,7 @@ void SysTick_Handler(void)
  * Returns the number of milliseconds elapsed since system startup.
  * The counter is incremented every 1ms in the SysTick interrupt.
  * 
- * @return Current tick count in milliseconds (0 to 4,294,967,295)
+ * @return Current tick count in milliseconds
  * 
  * @note Value wraps around after 49.7 days (2^32 ms)
  * @note Subtraction operations are safe across overflow

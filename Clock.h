@@ -14,30 +14,24 @@
 /**
  * @brief System core clock frequency in Hz
  * 
- * This constant defines the current system clock frequency.
+ * This variable is provided by CMSIS and contains the current
+ * system clock frequency. It is automatically updated when the
+ * clock configuration changes (via SystemCoreClockUpdate()).
+ * 
  * Default is 16,000,000 Hz (16 MHz) after reset.
  * 
  * @note Used by SysTick_Reload_Value() to calculate 1ms period
  */
-#define System_Core_Clock 16000000U
+extern uint32_t SystemCoreClock;
 
-/**
- * @brief Initialize the system clock
- * 
- * Configures the system clock to the desired frequency.
- * Currently configured for default 16 MHz operation.
- * 
- * @note Must be called before any peripheral initialization
- * @see SysTick_Init() depends on this configuration
- */
-void Clock_Init(void);
+
 
 /**
  * @brief Calculate SysTick reload value for 1ms period
  * 
  * @return 24-bit reload value for SysTick timer
  * 
- * @note Result = (System_Core_Clock / 1000) - 1
+ * @note Result = (SystemCoreClock / 1000) - 1
  * @see SysTick_Init() uses this value
  */
 uint32_t SysTick_Reload_Value(void);

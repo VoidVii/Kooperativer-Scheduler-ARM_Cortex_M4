@@ -18,6 +18,9 @@ for(int i = 0; i < NUM_LEDS; i++) {
     LED_off(allLEDs[i]);  // Turn all off
 }
 */
+#include "TM4C123GH6PM.h"
+#include "system_TM4C123.h"
+#include "core_cm4.h"
 #include "Tm4c123gh6pm_Init.h"
 #include "SysTick.h"
 #include "GPIO.h"
@@ -185,9 +188,13 @@ uint32_t numTasks = sizeof(Task) / sizeof(Task[0]);
  */
 int main()
 {
-    // Initialize system modules
-    Tm4c123gh6pm_Init();
+    SystemCoreClockUpdate(); 
     
+    __disable_irq();
+    
+    // Initialize system modules
+    SysTick_Init();
+   
     GPIO_EnablePort(GPIO_PORTF);      // Enable clock for Port F
     
     // Configure GPIO pins
@@ -197,10 +204,14 @@ int main()
     GPIO_ConfigureOutput(GPIO_PORTF, 2U);  // Blue LED as output
     GPIO_ConfigureOutput(GPIO_PORTF, 3U);  // Green LED as output
     
+    
     // Initialize all LEDs to OFF state
     LED_off(&red_LED);
     LED_off(&blue_LED);
     LED_off(&green_LED);
+    
+    __enable_irq();
+   
     
     // Main super loop - runs forever
     while(1)

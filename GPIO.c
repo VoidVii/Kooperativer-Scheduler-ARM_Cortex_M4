@@ -9,7 +9,7 @@
  */
 
 #include "GPIO.h"
-#include "tm4c123gh6pm.h"
+#include "TM4C123GH6PM.h"
 
 /**
  * @brief Enable clock and AHB for a GPIO port
@@ -35,8 +35,10 @@ void GPIO_EnablePort(uint8_t port)
      * Enabling AHB allows faster access to GPIO registers via the
      * AHB bus instead of the slower APB bus.
      */
-    SYSCTL_GPIOHBCTL_R |= (1U << port);
   
+    //SYSCTL_GPIOHBCTL_R |= (1U << port);
+    SYSCTL->GPIOHBCTL |= (1U << port);
+    
     /*
      * Enable clock for the specified GPIO port
      * RCGCGPIO = Run Mode Clock Gating Control for GPIO
@@ -45,8 +47,10 @@ void GPIO_EnablePort(uint8_t port)
      * Each peripheral needs its clock enabled before use.
      * Without clock, register writes are ignored.
      */
-    SYSCTL_RCGCGPIO_R |= (1U << port);
-
+    
+    //SYSCTL_RCGCGPIO_R |= (1U << port);
+    SYSCTL->RCGCGPIO |= (1U << port);
+    
     /*
      * Wait for the port to be ready
      * PRGPIO = Peripheral Ready GPIO
@@ -55,7 +59,8 @@ void GPIO_EnablePort(uint8_t port)
      * After enabling clock, we must wait for the peripheral
      * to become ready before accessing its registers.
      */
-    while ((SYSCTL_PRGPIO_R & (1U << port)) == 0U) {}
+    
+    while ((SYSCTL->PRGPIO & (1U << port)) == 0U) {}
 }
 
 /**
