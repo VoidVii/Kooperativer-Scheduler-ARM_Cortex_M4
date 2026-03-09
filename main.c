@@ -21,7 +21,6 @@ for(int i = 0; i < NUM_LEDS; i++) {
 #include "TM4C123GH6PM.h"
 #include "system_TM4C123.h"
 #include "core_cm4.h"
-#include "Tm4c123gh6pm_Init.h"
 #include "SysTick.h"
 #include "GPIO.h"
 #include "Clock.h"

@@ -1,0 +1,130 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\XclFileGenerator.exe" $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\SourceIndexer.exe" $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out
+
+rule MAKEBROWSE
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\makeBrowseData.exe" $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out
+
+rule PDBLINK
+  command = "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\common\bin\PbdLink.exe" $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out
+
+
+
+#Build steps
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Clock.c" -xcl_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.xcl" -macro_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Clock.c" -D __FPU_PRESENT=1 -D __FPU_USED=1 -o "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\Obj\dbg" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -Ol --predef_macros "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.tmp"
+  rspfile_name = C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.xcl.rsp
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Coop_Scheduler.c" -xcl_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.xcl" -macro_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Coop_Scheduler.c" -D __FPU_PRESENT=1 -D __FPU_USED=1 -o "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\Obj\dbg" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -Ol --predef_macros "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.tmp"
+  rspfile_name = C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.xcl.rsp
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debounce_Switch.c" -xcl_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.xcl" -macro_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debounce_Switch.c" -D __FPU_PRESENT=1 -D __FPU_USED=1 -o "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\Obj\dbg" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -Ol --predef_macros "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.tmp"
+  rspfile_name = C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.xcl.rsp
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\delay_ms.c" -xcl_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.xcl" -macro_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\delay_ms.c" -D __FPU_PRESENT=1 -D __FPU_USED=1 -o "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\Obj\dbg" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -Ol --predef_macros "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.tmp"
+  rspfile_name = C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.xcl.rsp
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\GPIO.c" -xcl_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.xcl" -macro_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\GPIO.c" -D __FPU_PRESENT=1 -D __FPU_USED=1 -o "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\Obj\dbg" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -Ol --predef_macros "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.tmp"
+  rspfile_name = C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.xcl.rsp
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\LED.c" -xcl_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.xcl" -macro_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\LED.c" -D __FPU_PRESENT=1 -D __FPU_USED=1 -o "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\Obj\dbg" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -Ol --predef_macros "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.tmp"
+  rspfile_name = C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.xcl.rsp
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\main.c" -xcl_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.xcl" -macro_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\main.c" -D __FPU_PRESENT=1 -D __FPU_USED=1 -o "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\Obj\dbg" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -Ol --predef_macros "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.tmp"
+  rspfile_name = C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.xcl.rsp
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\SysTick.c" -xcl_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.xcl" -macro_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\SysTick.c" -D __FPU_PRESENT=1 -D __FPU_USED=1 -o "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\Obj\dbg" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -Ol --predef_macros "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.tmp"
+  rspfile_name = C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.xcl.rsp
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.xcl : COMPILER_XCL 
+  xclcommand = -source_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\system_TM4C123.c" -xcl_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.xcl" -macro_file "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.tmp" -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\bin\iccarm.exe"
+  flags = "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\system_TM4C123.c" -D __FPU_PRESENT=1 -D __FPU_USED=1 -o "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\Obj\TivaBoard" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\inc\c\DLib_Config_Normal.h" -I "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.1\arm\CMSIS\Core\Include\\" -Ol --predef_macros "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.tmp"
+  rspfile_name = C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.xcl.rsp
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.pbi : INDEXER C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.xcl |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Clock.c
+  flags = "-out=C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.pbi" -f "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.xcl"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.pbi : INDEXER C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.xcl |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Coop_Scheduler.c
+  flags = "-out=C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.pbi" -f "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.xcl"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.pbi : INDEXER C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.xcl |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debounce_Switch.c
+  flags = "-out=C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.pbi" -f "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.xcl"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.pbi : INDEXER C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.xcl |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\delay_ms.c
+  flags = "-out=C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.pbi" -f "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.xcl"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.pbi : INDEXER C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.xcl |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\GPIO.c
+  flags = "-out=C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.pbi" -f "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.xcl"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.pbi : INDEXER C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.xcl |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\LED.c
+  flags = "-out=C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.pbi" -f "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.xcl"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.pbi : INDEXER C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.xcl |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\main.c
+  flags = "-out=C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.pbi" -f "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.xcl"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.pbi : INDEXER C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.xcl |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\SysTick.c
+  flags = "-out=C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.pbi" -f "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.xcl"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.pbi : INDEXER C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.xcl |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\system_TM4C123.c
+  flags = "-out=C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.pbi" -f "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.xcl"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1.pbw : MAKEBROWSE C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1.pbd
+  flags = "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1.pbd" -output "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1.pbw"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part0.pbi : PDBLINK C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.pbi |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.pbi $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.pbi
+  flags = -M "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part0.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Clock.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Coop_Scheduler.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\Debounce_Switch.pbi"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part1.pbi : PDBLINK C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.pbi |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.pbi $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.pbi
+  flags = -M "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part1.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\delay_ms.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\GPIO.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\LED.pbi"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part2.pbi : PDBLINK C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.pbi |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.pbi $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.pbi
+  flags = -M "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part2.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\main.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\dbg\SysTick.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\TivaBoard\system_TM4C123.pbi"
+
+build C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1.pbd : PDBLINK C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part0.pbi |  $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part1.pbi $
+C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part2.pbi
+  flags = -M "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1.pbd" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part0.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part1.pbi" "C$:\Users\Vitali\Desktop\Tiva-Projekt$ mit$ LEDSwitch$ OOP\Debug\BrowseInfo\Learning_1_part2.pbi"
+

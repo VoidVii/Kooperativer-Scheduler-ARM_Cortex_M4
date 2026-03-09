@@ -1,0 +1,44 @@
+# ninja log v5
+0	591	7932409394388445	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/3_SysTick_Delay_Loop_ms/Debug/Obj/dbg/Tm4c123gh6pm_Init.o	fc3a2bd83f8e38b6
+2	83	7940132451205579	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/4_Building_Modules/Debug/Exe/Learning_1.out	622c8bd1e624414b
+1	180	7947904069901051	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/TivaBoard/system_TM4C123.o	a1c9e7ac68d6e8d0
+14	384	7940109409451244	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/4_Building_Modules/Debug/Obj/dbg/Tm4c123gh6pm_Init.o	6d3343a54d54502f
+0	275	7940139726007065	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/4_Building_Modules/Debug/Obj/dbg/main.o	64e81239537f2978
+2	328	7937523106681456	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/4_Building_Modules/Debug/Obj/dbg/Clock.o	555b8363fde081d4
+15	347	7939226273993149	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/4_Building_Modules/Debug/Obj/dbg/delay_ms.o	19cfe15d87f76f0e
+216	634	7935815871955889	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/4_Building_Modules/Debug/Obj/dbg/GPIO.o	dac1611cb8b769a3
+6	125	7939235789695491	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/4_Building_Modules/Debug/Obj/dbg/Debounce_Switch.o	82f7559252b0fe29
+4	204	7940109407420137	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/4_Building_Modules/Debug/Obj/dbg/LED.o	4e5e7c6f8fdf0b67
+1	175	7937535332356583	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/4_Building_Modules/Debug/Obj/dbg/SysTick.o	75588de588778988
+1	122	7936747593231693	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/4_Building_Modules/Debug/Obj/dbg/Coop_Scheduler.o	72a01a6115873526
+1	432	7947903584334865	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/Tm4c123gh6pm_Init.o	45862aa151a066f3
+3	543	7947907717742386	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/main.o	8ac87f3163e75a5
+2	229	7947908413545078	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/main.o	8ac87f3163e75a5
+2	224	7947908998107913	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/main.o	8ac87f3163e75a5
+1	252	7947912622847112	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/GPIO.o	74987c01c399dd5a
+2	482	7947921729809821	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/SysTick.o	ed16a30660aa1dd0
+2	595	7947922978661754	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/SysTick.o	ed16a30660aa1dd0
+2	457	7947923680517692	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/Clock.o	e935248ae04f4271
+6	654	7947928474253997	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/Clock.o	e935248ae04f4271
+2	606	7947934360752410	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/SysTick.o	ed16a30660aa1dd0
+2	707	7947934409485000	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/main.o	8ac87f3163e75a5
+30	365	7947934492261673	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/Debounce_Switch.o	718836dc453c04ee
+396	697	7947934495502014	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/Coop_Scheduler.o	26dad8518af59702
+367	795	7947934496608863	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/delay_ms.o	6f7ae2ae37a9c731
+702	1235	7947934500934504	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/GPIO.o	74987c01c399dd5a
+799	1282	7947934501035374	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/Tm4c123gh6pm_Init.o	45862aa151a066f3
+1240	1477	7947934503653974	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/LED.o	7cb1c2f81ce67728
+12	495	7947935622742111	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/main.o	8ac87f3163e75a5
+2	496	7947935828503819	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/Clock.o	e935248ae04f4271
+1	138	7947935999823207	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/Clock.o	e935248ae04f4271
+1	96	7947936268002665	C:/Users/Vitali/OneDrive/Embedded_Programming/SELF-Training/IAR/Learning/Tiva _TM4C123__Embedded _C _Projekt/Debug/Obj/dbg/Clock.o	e935248ae04f4271
+0	455	7947967805934767	C:/Users/Vitali/Desktop/Tiva-Projekt mit LEDSwitch OOP/Debug/Obj/dbg/main.o	4f77e039386d9abb
+5	216	7947967830149889	C:/Users/Vitali/Desktop/Tiva-Projekt mit LEDSwitch OOP/Debug/Obj/dbg/Debounce_Switch.o	2b131127de5f72d2
+14	226	7947967830230482	C:/Users/Vitali/Desktop/Tiva-Projekt mit LEDSwitch OOP/Debug/Obj/dbg/Coop_Scheduler.o	e8182a3bd183c038
+218	414	7947967832266241	C:/Users/Vitali/Desktop/Tiva-Projekt mit LEDSwitch OOP/Debug/Obj/dbg/Clock.o	8ea27254acb887e2
+229	532	7947967833474367	C:/Users/Vitali/Desktop/Tiva-Projekt mit LEDSwitch OOP/Debug/Obj/dbg/GPIO.o	85a1e08dc7ba0cdf
+417	766	7947967835181157	C:/Users/Vitali/Desktop/Tiva-Projekt mit LEDSwitch OOP/Debug/Obj/dbg/SysTick.o	92dbb7f9d50bc7a
+535	916	7947967836793710	C:/Users/Vitali/Desktop/Tiva-Projekt mit LEDSwitch OOP/Debug/Obj/dbg/delay_ms.o	d1798437691458a8
+769	1016	7947967838206203	C:/Users/Vitali/Desktop/Tiva-Projekt mit LEDSwitch OOP/Debug/Obj/dbg/LED.o	e537ec70f7b19a1b
+920	1177	7947967840018423	C:/Users/Vitali/Desktop/Tiva-Projekt mit LEDSwitch OOP/Debug/Obj/TivaBoard/system_TM4C123.o	6a36476790f2adf5
+1179	1795	7947967846128926	C:/Users/Vitali/Desktop/Tiva-Projekt mit LEDSwitch OOP/Debug/Exe/Learning_1.out	db20f55eb4e98b92

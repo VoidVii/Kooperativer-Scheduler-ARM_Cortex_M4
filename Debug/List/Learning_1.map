@@ -1,0 +1,289 @@
+###############################################################################
+#
+# IAR ELF Linker V9.32.2.340/W64 for ARM                  09/Mar/2026  22:59:44
+# Copyright 2007-2023 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\Exe\Learning_1.out
+#    Map file     =
+#        C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\List\Learning_1.map
+#    Command line =
+#        -f "C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\Exe\Learning_1.out.rsp"
+#        ("C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\Obj\dbg\Clock.o" "C:\Users\Vitali\Desktop\Tiva-Projekt mit
+#        LEDSwitch OOP\Debug\Obj\dbg\Coop_Scheduler.o"
+#        "C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\Obj\dbg\Debounce_Switch.o"
+#        "C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\Obj\dbg\delay_ms.o" "C:\Users\Vitali\Desktop\Tiva-Projekt
+#        mit LEDSwitch OOP\Debug\Obj\dbg\GPIO.o"
+#        "C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\Obj\dbg\LED.o" "C:\Users\Vitali\Desktop\Tiva-Projekt mit
+#        LEDSwitch OOP\Debug\Obj\dbg\main.o"
+#        "C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\Obj\TivaBoard\system_TM4C123.o"
+#        "C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\Obj\dbg\SysTick.o" --no_out_extension -o
+#        "C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\Exe\Learning_1.out" --redirect _Printf=_PrintfFullNoMb
+#        --redirect _Scanf=_ScanfFullNoMb --map
+#        "C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch
+#        OOP\Debug\List\Learning_1.map" --config "C:\Program Files\IAR
+#        Systems\Embedded Workbench
+#        9.1\arm/config/linker/TexasInstruments/TM4C1233H6.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale --cpu=Cortex-M4
+#        --fpu=VFPv4_sp)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because --advanced_heap
+was not specified and the application did not appear to
+be primarily optimized for speed.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x3'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0x40
+  .intvec            ro code          0x0    0x40  vector_table_M.o [5]
+                                   - 0x40    0x40
+
+"P1":                                       0x517
+  .text              ro code         0x40   0x138  main.o [2]
+  .text              ro code        0x178   0x132  GPIO.o [2]
+  .text              ro code        0x2aa    0x3a  packbits_init_single.o [5]
+  .text              ro code        0x2e4    0x3c  SysTick.o [2]
+  .text              ro code        0x320    0x50  LED.o [2]
+  .text              ro code        0x370    0x3c  Debounce_Switch.o [2]
+  .text              ro code        0x3ac    0x10  system_TM4C123.o [1]
+  .text              ro code        0x3bc    0x72  Coop_Scheduler.o [2]
+  .text              ro code        0x42e     0x2  vectortrap_M.o [5]
+  .text              ro code        0x430    0x14  Clock.o [2]
+  .text              ro code        0x444    0x28  data_init.o [5]
+  .text              ro code        0x46c    0x22  fpinit_M.o [4]
+  .iar.init_table    const          0x490    0x10  - Linker created -
+  .text              ro code        0x4a0    0x1e  cmain.o [5]
+  .text              ro code        0x4be     0x4  low_level_init.o [3]
+  .text              ro code        0x4c2     0x4  exit.o [3]
+  .text              ro code        0x4c8     0xa  cexit.o [5]
+  .text              ro code        0x4d4    0x14  exit.o [6]
+  .text              ro code        0x4e8    0x1c  cstartup_M.o [5]
+  .rodata            const          0x504     0x0  packbits_init_single.o [5]
+  Initializer bytes  const          0x504    0x53  <for P2-1>
+                                  - 0x557   0x517
+
+"P2", part 1 of 2:                           0x92
+  P2-1                        0x2000'0000    0x92  <Init block>
+    .data            inited   0x2000'0000    0x14  main.o [2]
+    .data            inited   0x2000'0014    0x14  main.o [2]
+    .data            inited   0x2000'0028    0x14  main.o [2]
+    .data            inited   0x2000'003c    0x10  main.o [2]
+    .data            inited   0x2000'004c    0x10  main.o [2]
+    .data            inited   0x2000'005c    0x24  main.o [2]
+    .data            inited   0x2000'0080     0x4  main.o [2]
+    .data            inited   0x2000'0084     0x4  system_TM4C123.o [1]
+    .bss             inited   0x2000'0088     0x4  main.o [2]
+    .bss             inited   0x2000'008c     0x4  SysTick.o [2]
+    .data            inited   0x2000'0090     0x1  main.o [2]
+    .data            inited   0x2000'0091     0x1  main.o [2]
+                            - 0x2000'0092    0x92
+
+"P2", part 2 of 2:                         0x1000
+  CSTACK                      0x2000'0098  0x1000  <Block>
+    CSTACK           uninit   0x2000'0098  0x1000  <Block tail>
+                            - 0x2000'1098  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x557     0x3'ffff  0x3'faa9
+  0x2000'0092  0x2000'0097       0x6
+  0x2000'1098  0x2000'7fff    0x6f68
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0x53 (56% of destination):
+                0x504  0x53
+    1 destination range, total size 0x92:
+          0x2000'0000  0x92
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+command line/config:
+    -------------------------------------------------
+    Total:
+
+C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch OOP\Debug\Obj\TivaBoard: [1]
+    system_TM4C123.o             16        2        4
+    -------------------------------------------------
+    Total:                       16        2        4
+
+C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch OOP\Debug\Obj\dbg: [2]
+    Clock.o                      20
+    Coop_Scheduler.o            114
+    Debounce_Switch.o            60
+    GPIO.o                      306
+    LED.o                        80
+    SysTick.o                    60        2        4
+    main.o                      312       79      138
+    -------------------------------------------------
+    Total:                      952       81      142
+
+dl7M_tln.a: [3]
+    exit.o                        4
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                        8
+
+m7M_tls.a: [4]
+    fpinit_M.o                   34
+    -------------------------------------------------
+    Total:                       34
+
+rt7M_tl.a: [5]
+    cexit.o                      10
+    cmain.o                      30
+    cstartup_M.o                 28
+    data_init.o                  40
+    packbits_init_single.o       58
+    vector_table_M.o             64
+    vectortrap_M.o                2
+    -------------------------------------------------
+    Total:                      232
+
+shb_l.a: [6]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                          4        2
+    Linker created                        16    4'096
+-----------------------------------------------------
+    Grand Total:              1'266      101    4'242
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base         0x490         --   Gb  - Linker created -
+.iar.init_table$$Limit        0x4a0         --   Gb  - Linker created -
+?main                         0x4a1        Code  Gb  cmain.o [5]
+BLUE_LED_ON                    0x51  0x10  Code  Gb  main.o [2]
+BusFault_Handler              0x42f        Code  Wk  vectortrap_M.o [5]
+CSTACK$$Base            0x2000'0098         --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1098         --   Gb  - Linker created -
+DebugMon_Handler              0x42f        Code  Wk  vectortrap_M.o [5]
+GPIO_ConfigureInput           0x1cf  0x64  Code  Gb  GPIO.o [2]
+GPIO_ConfigureOutput          0x1a1  0x2e  Code  Gb  GPIO.o [2]
+GPIO_EnablePort               0x179  0x28  Code  Gb  GPIO.o [2]
+GPIO_ReadPin                  0x287  0x24  Code  Gb  GPIO.o [2]
+GPIO_WritePin                 0x259  0x2e  Code  Gb  GPIO.o [2]
+GREEN_LED_ON                   0x61  0x10  Code  Gb  main.o [2]
+GetTickCounter                0x30b   0x6  Code  Gb  SysTick.o [2]
+HardFault_Handler             0x42f        Code  Wk  vectortrap_M.o [5]
+LED_off                       0x33f  0x1e  Code  Gb  LED.o [2]
+LED_on                        0x321  0x1e  Code  Gb  LED.o [2]
+LED_toggle                    0x35d  0x14  Code  Gb  LED.o [2]
+MemManage_Handler             0x42f        Code  Wk  vectortrap_M.o [5]
+NMI_Handler                   0x42f        Code  Wk  vectortrap_M.o [5]
+PendSV_Handler                0x42f        Code  Wk  vectortrap_M.o [5]
+RED_LED_ON                     0x41  0x10  Code  Gb  main.o [2]
+Region$$Table$$Base           0x490         --   Gb  - Linker created -
+Region$$Table$$Limit          0x4a0         --   Gb  - Linker created -
+SVC_Handler                   0x42f        Code  Wk  vectortrap_M.o [5]
+Switch1                 0x2000'003c  0x10  Data  Gb  main.o [2]
+Switch2                 0x2000'004c  0x10  Data  Gb  main.o [2]
+Switch_1                       0xab  0x22  Code  Gb  main.o [2]
+Switch_1::lastState_1   0x2000'0090   0x1  Data  Lc  main.o [2]
+Switch_2                       0xcd  0x22  Code  Gb  main.o [2]
+Switch_2::lastState_2   0x2000'0091   0x1  Data  Lc  main.o [2]
+SysTick_Handler               0x301   0xa  Code  Gb  SysTick.o [2]
+SysTick_Init                  0x2e5  0x1c  Code  Gb  SysTick.o [2]
+SysTick_Reload_Value          0x431  0x14  Code  Gb  Clock.o [2]
+SystemCoreClock         0x2000'0084   0x4  Data  Gb  system_TM4C123.o [1]
+SystemCoreClockUpdate         0x3ad   0x8  Code  Gb  system_TM4C123.o [1]
+Task                    0x2000'005c  0x24  Data  Gb  main.o [2]
+Task_update                   0x3bd  0x72  Code  Gb  Coop_Scheduler.o [2]
+TickCounter             0x2000'008c   0x4  Data  Lc  SysTick.o [2]
+UsageFault_Handler            0x42f        Code  Wk  vectortrap_M.o [5]
+__cmain                       0x4a1        Code  Gb  cmain.o [5]
+__exit                        0x4d5  0x14  Code  Gb  exit.o [6]
+__iar_data_init3              0x445  0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp                0x46d        Code  Gb  fpinit_M.o [4]
+__iar_packbits_init_single3
+                              0x2ab  0x3a  Code  Gb  packbits_init_single.o [5]
+__iar_program_start           0x4e9        Code  Gb  cstartup_M.o [5]
+__low_level_init              0x4bf   0x4  Code  Gb  low_level_init.o [3]
+__vector_table                  0x0        Data  Gb  vector_table_M.o [5]
+_call_main                    0x4ad        Code  Gb  cmain.o [5]
+_exit                         0x4c9        Code  Gb  cexit.o [5]
+blue_LED                0x2000'0014  0x14  Data  Gb  main.o [2]
+debounce_switch               0x371  0x3c  Code  Gb  Debounce_Switch.o [2]
+exit                          0x4c3   0x4  Code  Gb  exit.o [3]
+green_LED               0x2000'0028  0x14  Data  Gb  main.o [2]
+main                           0xef  0x60  Code  Gb  main.o [2]
+numTasks                0x2000'0080   0x4  Data  Gb  main.o [2]
+read_Switch1                   0x71   0xe  Code  Gb  main.o [2]
+read_Switch2                   0x7f   0xe  Code  Gb  main.o [2]
+redLED                         0x8d  0x1e  Code  Gb  main.o [2]
+redLED::lastBlink       0x2000'0088   0x4  Data  Lc  main.o [2]
+red_LED                 0x2000'0000  0x14  Data  Gb  main.o [2]
+
+
+[1] = C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch OOP\Debug\Obj\TivaBoard
+[2] = C:\Users\Vitali\Desktop\Tiva-Projekt mit LEDSwitch OOP\Debug\Obj\dbg
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  1'266 bytes of readonly  code memory
+    101 bytes of readonly  data memory
+  4'242 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
