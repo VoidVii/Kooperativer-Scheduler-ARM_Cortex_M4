@@ -33,6 +33,10 @@ Das Ergebnis ist mein erstes größeres Embedded-Lernprojekt, bei dem ich versuc
 
 Der Fokus lag darauf, grundlegende Embedded-Konzepte wie Hardware-Abstraktion, Scheduler-Design und modulare Firmwarestruktur praktisch umzusetzen.
 
+# CMSIS-Integration: 
+Systematische Umstellung auf den Cortex Microcontroller Software Interface Standard für verbesserte Portabilität und Nutzung 
+standardisierter Funktionen (NVIC, SysTick, SystemCoreClock).
+
 # Tiva TM4C123 – Embedded C Projekt - Kooperativer Scheduler:
 
 In diesem Lernprojekt habe ich ein komplettes Embedded-System auf Basis des Tiva TM4C123 (ARM Cortex-M4) entwickelt. Die Schwerpunkte lagen auf:
