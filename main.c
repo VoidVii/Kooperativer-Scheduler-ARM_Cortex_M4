@@ -113,6 +113,10 @@ void redLED(void){
         LED_toggle(&red_LED); // Toggle the red LED
 }
 
+void greenLED(void){
+        LED_toggle(&green_LED); // Toggle the green LED
+}
+
 /**
  * @brief Task function for Switch 1 - detects falling edge (press)
  * Toggles blue LED when switch is pressed
@@ -133,17 +137,17 @@ void Switch_1(void){
  * @brief Task function for Switch 2 - detects falling edge (press)
  * Toggles green LED when switch is pressed
  */
-void Switch_2(void){
-    static uint8_t lastState_2 = 1U;     // Previous switch state (1 = released)
-    uint32_t state = debounce_switch(&Switch2);  // Get current debounced state
-    
-    // Falling edge detection: was released (1), now pressed (0)
-    if(state == 0U && lastState_2 == 1U){
-        LED_toggle(&green_LED);           // Toggle green LED on press
-    }
-    
-    lastState_2 = state;                // Save current state for next detection
-}
+//void Switch_2(void){
+//    static uint8_t lastState_2 = 1U;     // Previous switch state (1 = released)
+//    uint32_t state = debounce_switch(&Switch2);  // Get current debounced state
+//    
+//    // Falling edge detection: was released (1), now pressed (0)
+//    if(state == 0U && lastState_2 == 1U){
+//        LED_toggle(&green_LED);           // Toggle green LED on press
+//    }
+//    
+//    lastState_2 = state;                // Save current state for next detection
+//}
 
 /******************************* Build Tasks *********************************/
 /**
@@ -165,9 +169,9 @@ Task_t Task[] = {
     },
     /* Task for Switch 2 debouncing and detection */
     {
-        .period = 21U,   // Slightly different period to avoid phase lock
+        .period = 200U,   // Slightly different period to avoid phase lock
         .lastRun = 0U,
-        .sched = Switch_2
+        .sched = greenLED
     }
 };
 

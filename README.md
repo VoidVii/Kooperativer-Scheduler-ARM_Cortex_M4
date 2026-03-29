@@ -1,6 +1,12 @@
 # Learning Project – Embedded Systems
 Bare-metal cooperative scheduler for ARM Cortex-M4 (TM4C123) in C
 
+<img width="1338" height="198" alt="AnalyzerViewOnCooprativeScheduling2" src="https://github.com/user-attachments/assets/f8f7b067-528a-44f5-9ba3-f7d4b6a1681b" />
+
+**LED toggeln mit:**
+
+Red-LED: Period = 250 ms || Green-LED: Period = 200 ms || Blue-LED = switch 1 pressed (active low)
+
 Kooperativer Scheduler für ARM Cortex-M4
 
     Task_t Task[] = {
