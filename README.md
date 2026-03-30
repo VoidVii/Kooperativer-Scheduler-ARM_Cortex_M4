@@ -1,15 +1,18 @@
-# Learning Project – Embedded Systems
-Bare-metal cooperative scheduler for ARM Cortex-M4 (TM4C123) in C
+# Bare-metal cooperative scheduler for ARM Cortex-M4 (TM4C123) in C from scratch 
 
-<img width="1338" height="198" alt="AnalyzerViewOnCooprativeScheduling2" src="https://github.com/user-attachments/assets/f8f7b067-528a-44f5-9ba3-f7d4b6a1681b" />
+
+<img width="1338" height="198" alt="AnalyzerViewOnCooprativeScheduling2" src="https://github.com/user-attachments/assets/be00669d-d6d9-4208-8911-c9507ba3c036" />
+
+
+Die Pulsview-Messung zeigt denn Ablauf des kooperativen Schedulers mit 3 Tasks mit LED-Toggle-Funkktion (Green, Red, Blue). Zu erkennen ist das die Tasks immer leicht versetzt ausgeführt werden und dennoch die jeweilige Periode erhalten. Der Blue-Task toggelt bei Betätigung des User-Switch (Fallende Flanke / active low) die blaue LED.  
 
 **LED toggeln mit:**
 
 Red-LED: Period = 250 ms || Green-LED: Period = 200 ms || Blue-LED = switch 1 pressed (active low)
 
-Kooperativer Scheduler für ARM Cortex-M4
+## In PulsView zu sehende Tasks
 
-    Task_t Task[] = {
+     Task_t Task[] = {
         /* Task for red LED blinking */
         {
             .period = 250U,  // Check every 250ms (actual blink timing inside task)
@@ -22,17 +25,38 @@ Kooperativer Scheduler für ARM Cortex-M4
             .lastRun = 0U,
             .sched = Switch_1
         },
-        /* Task for Switch 2 debouncing and detection */
+        /* Task for greenLED blinking */
         {
-            .period = 21U,   // Slightly different period to avoid phase lock
+            .period = 200U,   
             .lastRun = 0U,
-            .sched = Switch_2
+            .sched = greenLED
         }
     };
 
+## Kooperativer Scheduler für ARM Cortex-M4
+    void Task_update(Task_t task[], uint32_t const numTasks, uint32_t now){
+        
+        // Iterate through all tasks in the array
+        for(uint8_t i = 0; i < numTasks; i++)
+        {  
+            // Check if it's time to run this task
+            // Unsigned arithmetic handles timer overflow automatically
+            // Example: if now wraps from 0xFFFFFFFF to 0, the subtraction still works!
+            if((now - task[i].lastRun) >= task[i].period)
+            {
+                // Run the task function (via function pointer)
+                task[i].sched();
+                
+                // Update last run time for next period
+                // Adding period instead of setting to 'now' prevents drift
+                task[i].lastRun += task[i].period;
+            }
+        }
+    }
+
 Dieses Projekt implementiert einen einfachen cooperative task scheduler auf Basis des SysTick Timers. Ziel des Projekts war es, ein besseres Verständnis für Embedded-System-Architektur, Hardware-Abstraktion und zeitgesteuerte Task-Ausführung ohne RTOS zu entwickeln.
 
-# Architekturdiagramm:
+## Architekturdiagramm:
 
     SysTick (1ms)
         |
@@ -46,7 +70,7 @@ Dieses Projekt implementiert einen einfachen cooperative task scheduler auf Basi
         |
         +---- Switch Debounce Task
 
-# Entwicklungshinweis:
+## Entwicklungshinweis:
 
 Dieses Projekt entstand als Lernprojekt im Bereich Embedded Systems. Während der Entwicklung habe ich KI-Tools für Feedback, Erklärungen und Unterstützung bei der Dokumentation (z.B. Doxygen) verwendet.
 
@@ -56,15 +80,15 @@ Code schreiben → Feedback erhalten → Konzepte verstehen → Code überarbeit
 
 Durch diese iterative Arbeitsweise konnte ich viele Embedded-Konzepte schneller verstehen und praktisch anwenden. Der finale Code ist von mir implementiert und wird vollständig von mir verstanden.
 
-Das Ergebnis ist mein erstes größeres Embedded-Lernprojekt, bei dem ich versucht habe, theoretisches Wissen mit praktischer Firmwareentwicklung zu verbinden.
+Das Ergebnis ist mein erstes größeres Embedded-Lernprojekt, bei dem ich angesammeltes theoretisches Wissen in praktische Firmwareentwicklung umgesetzt habe.
 
 Der Fokus lag darauf, grundlegende Embedded-Konzepte wie Hardware-Abstraktion, Scheduler-Design und modulare Firmwarestruktur praktisch umzusetzen.
 
-# CMSIS-Integration: 
+## CMSIS-Integration: 
 Systematische Umstellung auf den Cortex Microcontroller Software Interface Standard für verbesserte Portabilität und Nutzung 
 standardisierter Funktionen (NVIC, SysTick, SystemCoreClock).
 
-# Tiva TM4C123 – Embedded C Projekt - Kooperativer Scheduler:
+## Tiva TM4C123 – Embedded C Projekt - Kooperativer Scheduler:
 
 In diesem Lernprojekt habe ich ein komplettes Embedded-System auf Basis des Tiva TM4C123 (ARM Cortex-M4) entwickelt. Die Schwerpunkte lagen auf:
 
@@ -83,12 +107,11 @@ In diesem Lernprojekt habe ich ein komplettes Embedded-System auf Basis des Tiva
 - Debugging & Problemlösung:
   Umgang mit Hardware-Besonderheiten (Lock/Commit-Register, Bit-spezifische Adressierung, volatile)
   
-# Build info
+## Build info
 - IAR Embedded Workbench (Arm)
 - Tiva C Series LaunchPad TM4C123GXL
 
-# Hardware:
-
+## Hardware:
 - TI TM4C123GH6PM (ARM Cortex-M4)
 - On-board LEDs
 - User switch

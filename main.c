@@ -62,13 +62,6 @@ uint8_t read_Switch1(void){
     return GPIO_ReadPin(GPIO_PORTF, 4U);
 }
 
-/**
- * @brief Read function for Switch 2 (Port F, Pin 0)
- * @return 1 = released (pull-up), 0 = pressed
- */
-uint8_t read_Switch2(void){
-    return GPIO_ReadPin(GPIO_PORTF, 0U);
-}
 
 /****************************** Build Objects  ********************************/
 /* LED Objects - each with its own write function and state */
@@ -98,12 +91,6 @@ Switch_t Switch1 ={
     .switchState = 1U  // Current debounced state (1 = released)
 };
 
-Switch_t Switch2 ={
-    .read = read_Switch2,
-    .lastDebounceTime = 0U,
-    .lastReading = 1U,
-    .switchState = 1U
-};
 
 /**************************** Functions for Task-Handling  ********************/
 /**
@@ -133,21 +120,7 @@ void Switch_1(void){
     lastState_1 = state;               // Save current state for next detection
 }
 
-/**
- * @brief Task function for Switch 2 - detects falling edge (press)
- * Toggles green LED when switch is pressed
- */
-//void Switch_2(void){
-//    static uint8_t lastState_2 = 1U;     // Previous switch state (1 = released)
-//    uint32_t state = debounce_switch(&Switch2);  // Get current debounced state
-//    
-//    // Falling edge detection: was released (1), now pressed (0)
-//    if(state == 0U && lastState_2 == 1U){
-//        LED_toggle(&green_LED);           // Toggle green LED on press
-//    }
-//    
-//    lastState_2 = state;                // Save current state for next detection
-//}
+
 
 /******************************* Build Tasks *********************************/
 /**
@@ -155,21 +128,24 @@ void Switch_1(void){
  * Each task has a period, last run time, and function to call
  */
 Task_t Task[] = {
-    /* Task for red LED blinking */
+  
+    /* Task for redLED blinking */
     {
-        .period = 250U,  // Check every 250ms (actual blink timing inside task)
+        .period = 250U,  // Change state evry 250 ms 
         .lastRun = 0U,   // Initialize last run time to 0
         .sched = redLED  // Function to call
     },
+    
     /* Task for Switch 1 debouncing and detection */
     {
         .period = 20U,   // Check every 20ms (good for debouncing)
         .lastRun = 0U,
         .sched = Switch_1
     },
-    /* Task for Switch 2 debouncing and detection */
+    
+    /* Task for greenLED blinking */
     {
-        .period = 200U,   // Slightly different period to avoid phase lock
+        .period = 200U,   // Change state 200 ms
         .lastRun = 0U,
         .sched = greenLED
     }
@@ -193,10 +169,10 @@ int main()
     // Initialize system modules
     SysTick_Init();
    
-    GPIO_EnablePort(GPIO_PORTF);      // Enable clock for Port F
+    // Enable clock for Port F
+    GPIO_EnablePort(GPIO_PORTF);      
     
     // Configure GPIO pins
-    GPIO_ConfigureInput(GPIO_PORTF, 4U);   // Switch 1 as input
     GPIO_ConfigureInput(GPIO_PORTF, 0U);   // Switch 2 as input
     GPIO_ConfigureOutput(GPIO_PORTF, 1U);  // Red LED as output
     GPIO_ConfigureOutput(GPIO_PORTF, 2U);  // Blue LED as output
