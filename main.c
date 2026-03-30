@@ -173,7 +173,7 @@ int main()
     GPIO_EnablePort(GPIO_PORTF);      
     
     // Configure GPIO pins
-    GPIO_ConfigureInput(GPIO_PORTF, 0U);   // Switch 2 as input
+    GPIO_ConfigureInput(GPIO_PORTF, 4U);   // Switch 2 as input
     GPIO_ConfigureOutput(GPIO_PORTF, 1U);  // Red LED as output
     GPIO_ConfigureOutput(GPIO_PORTF, 2U);  // Blue LED as output
     GPIO_ConfigureOutput(GPIO_PORTF, 3U);  // Green LED as output
