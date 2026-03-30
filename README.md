@@ -1,7 +1,8 @@
 # Learning Project – Embedded Systems
 Bare-metal cooperative scheduler for ARM Cortex-M4 (TM4C123) in C
 
-<img width="1338" height="198" alt="AnalyzerViewOnCooprativeScheduling2" src="https://github.com/user-attachments/assets/f8f7b067-528a-44f5-9ba3-f7d4b6a1681b" />
+<img width="1338" height="198" alt="AnalyzerViewOnCooprativeScheduling2" src="https://github.com/user-attachments/assets/be00669d-d6d9-4208-8911-c9507ba3c036" />
+
 
 **LED toggeln mit:**
 
