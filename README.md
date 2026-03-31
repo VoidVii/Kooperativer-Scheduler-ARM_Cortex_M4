@@ -4,7 +4,12 @@
 <img width="1338" height="198" alt="AnalyzerViewOnCooprativeScheduling2" src="https://github.com/user-attachments/assets/be00669d-d6d9-4208-8911-c9507ba3c036" />
 
 
-Die Pulsview-Messung zeigt denn Ablauf des kooperativen Schedulers mit 3 Tasks mit LED-Toggle-Funkktion (Green, Red, Blue). Zu erkennen ist das die Tasks immer leicht versetzt ausgeführt werden und dennoch die jeweilige Periode erhalten. Der Blue-Task toggelt bei Betätigung des User-Switch (Fallende Flanke / active low) die blaue LED.  
+Die Pulsview-Messung zeigt denn Ablauf des kooperativen Schedulers mit 3 Tasks mit LED-Toggle-Funkktion (Green, Red, Blue). 
+
+Zu erkennen ist:
+- Tasks werden immer leicht versetzt ausgeführt 
+- jeweilige Perioden werden eingehalten ohne Drift
+- Blue-Task toggelt bei Betätigung des User-Switch (Fallende Flanke / active low) die blaue LED.  
 
 **LED toggeln mit:**
 
