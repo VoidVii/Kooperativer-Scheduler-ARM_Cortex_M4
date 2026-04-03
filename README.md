@@ -5,6 +5,7 @@ Der Fokus lag darauf, mein angesammeltes theoretisches Wissen anzuwenden und gru
 
 Dieses Projekt bildet die Grundlage für mein nachfolgendes präemptives Scheduler-Projekt.
 
+## Proof of Concept - PulseView - Messung mit Logic Analyzer 
 <img width="1338" height="198" alt="AnalyzerViewOnCooprativeScheduling2" src="https://github.com/user-attachments/assets/be00669d-d6d9-4208-8911-c9507ba3c036" />
 
 
