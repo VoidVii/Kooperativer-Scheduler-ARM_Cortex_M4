@@ -1,9 +1,19 @@
 # Bare-metal cooperative scheduler for ARM Cortex-M4 (TM4C123) in C from scratch 
 
-Dieses Lernprojekt fasst das Ergebnis meiner eigenständigen Entwicklung des Kooperativen Schedulers von Grund auf zusammen. 
-Der Fokus lag darauf, mein angesammeltes theoretisches Wissen anzuwenden und grundlegende Embedded-Konzepte wie Hardware-Abstraktion, Scheduler-Design und modulare Firmwarestruktur praktisch umzusetzen.
 
-Dieses Projekt bildet die Grundlage für mein nachfolgendes präemptives Scheduler-Projekt.
+<table>
+  <tr>
+    <td width="60%">
+      <b>Übersicht:</b><br>  
+	Dieses Lernprojekt fasst das Ergebnis meiner eigenständigen Entwicklung des Kooperativen Schedulers von Grund auf zusammen. 
+	Der Fokus lag darauf, mein angesammeltes theoretisches Wissen anzuwenden und grundlegende Embedded-Konzepte wie Hardware-Abstraktion, Scheduler-Design und 		modulare Firmwarestruktur praktisch umzusetzen. Dieses Projekt bildet die Grundlage für mein nachfolgendes präemptives Scheduler-Projekt. 
+    </td>
+    <td width="40%">
+      <img width="450" height="370" alt="grafik" src="https://github.com/user-attachments/assets/e00fc2a9-9b90-4142-ba76-9efb73b29d35" />
+    </td>
+  </tr>
+</table>
+
 
 ## Proof of Concept - PulseView - Messung mit Logic Analyzer 
 <img width="1338" height="198" alt="AnalyzerViewOnCooprativeScheduling2" src="https://github.com/user-attachments/assets/be00669d-d6d9-4208-8911-c9507ba3c036" />
